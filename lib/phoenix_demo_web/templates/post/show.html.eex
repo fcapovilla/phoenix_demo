@@ -17,6 +17,17 @@
     <%= @post.visible %>
   </li>
 
+  <li>
+    <strong>Comments:</strong>
+    <ul>
+      <%= for comment <- @post.comments do %>
+        <li>
+          <%= comment.content %> - <%= comment.updated_at %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>

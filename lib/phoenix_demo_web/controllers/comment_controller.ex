@@ -11,7 +11,7 @@ defmodule PhoenixDemoWeb.CommentController do
 
   def new(conn, _params) do
     changeset = Blog.change_comment(%Comment{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, posts: Blog.list_posts)
   end
 
   def create(conn, %{"comment" => comment_params}) do
@@ -33,7 +33,7 @@ defmodule PhoenixDemoWeb.CommentController do
   def edit(conn, %{"id" => id}) do
     comment = Blog.get_comment!(id)
     changeset = Blog.change_comment(comment)
-    render(conn, "edit.html", comment: comment, changeset: changeset)
+    render(conn, "edit.html", comment: comment, changeset: changeset, posts: Blog.list_posts)
   end
 
   def update(conn, %{"id" => id, "comment" => comment_params}) do

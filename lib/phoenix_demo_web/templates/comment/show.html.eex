@@ -12,6 +12,11 @@
     <%= @comment.content %>
   </li>
 
+  <li>
+    <strong>Post:</strong>
+    <%= @comment.post.title %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: comment_path(@conn, :edit, @comment) %></span>
