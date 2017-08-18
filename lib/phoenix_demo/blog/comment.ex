@@ -7,7 +7,7 @@ defmodule PhoenixDemo.Blog.Comment do
   schema "comments" do
     field :content, :string
     field :username, :string
-    field :post_id, :id
+    belongs_to :post, PhoenixDemo.Blog.Post
 
     timestamps()
   end
@@ -15,7 +15,7 @@ defmodule PhoenixDemo.Blog.Comment do
   @doc false
   def changeset(%Comment{} = comment, attrs) do
     comment
-    |> cast(attrs, [:username, :content])
-    |> validate_required([:username, :content])
+    |> cast(attrs, [:username, :content, :post_id])
+    |> validate_required([:username, :content, :post_id])
   end
 end

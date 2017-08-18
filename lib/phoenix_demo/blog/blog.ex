@@ -18,7 +18,7 @@ defmodule PhoenixDemo.Blog do
 
   """
   def list_posts do
-    Repo.all(Post)
+    Post |> Ecto.Query.preload(:comments) |> Repo.all()
   end
 
   @doc """
@@ -35,7 +35,9 @@ defmodule PhoenixDemo.Blog do
       ** (Ecto.NoResultsError)
 
   """
-  def get_post!(id), do: Repo.get!(Post, id)
+  def get_post!(id) do
+    Post |> Ecto.Query.preload(:comments) |> Repo.get!(id)
+  end
 
   @doc """
   Creates a post.
@@ -114,7 +116,7 @@ defmodule PhoenixDemo.Blog do
 
   """
   def list_comments do
-    Repo.all(Comment)
+    Comment |> Ecto.Query.preload(:post) |> Repo.all()
   end
 
   @doc """
@@ -131,7 +133,9 @@ defmodule PhoenixDemo.Blog do
       ** (Ecto.NoResultsError)
 
   """
-  def get_comment!(id), do: Repo.get!(Comment, id)
+  def get_comment!(id) do
+    Comment |> Ecto.Query.preload(:post) |> Repo.get!(id)
+  end
 
   @doc """
   Creates a comment.

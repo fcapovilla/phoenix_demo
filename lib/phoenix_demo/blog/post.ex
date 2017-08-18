@@ -8,6 +8,7 @@ defmodule PhoenixDemo.Blog.Post do
     field :content, :string
     field :title, :string
     field :visible, :boolean, default: false
+    has_many :comments, PhoenixDemo.Blog.Comment
 
     timestamps()
   end
