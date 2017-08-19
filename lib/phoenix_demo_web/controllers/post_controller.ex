@@ -6,6 +6,7 @@ defmodule PhoenixDemoWeb.PostController do
 
   def index(conn, _params) do
     posts = Blog.list_posts()
+    require ExDebugToolbar;ExDebugToolbar.pry
     render(conn, "index.html", posts: posts)
   end
 

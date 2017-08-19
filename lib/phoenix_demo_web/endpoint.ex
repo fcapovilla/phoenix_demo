@@ -1,5 +1,6 @@
 defmodule PhoenixDemoWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :phoenix_demo
+  use ExDebugToolbar.Phoenix
 
   socket "/socket", PhoenixDemoWeb.UserSocket
 

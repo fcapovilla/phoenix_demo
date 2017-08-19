@@ -56,3 +56,16 @@ config :phoenix_demo, PhoenixDemo.Repo,
   database: "phoenix_demo_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :ex_debug_toolbar,
+  enable: true
+
+config :phoenix_demo, PhoenixDemoWeb.Endpoint,
+  instrumenters: [ExDebugToolbar.Collector.InstrumentationCollector]
+
+config :phoenix_demo, PhoenixDemo.Repo,
+  loggers: [ExDebugToolbar.Collector.EctoCollector, Ecto.LogEntry]
+
+config :phoenix, :template_engines,
+  eex: ExDebugToolbar.Template.EExEngine,
+  exs: ExDebugToolbar.Template.ExsEngine
