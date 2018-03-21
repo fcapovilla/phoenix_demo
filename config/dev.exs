@@ -54,7 +54,7 @@ config :phoenix_demo, PhoenixDemo.Repo,
   username: "postgres",
   password: "postgres",
   database: "phoenix_demo_dev",
-  hostname: "localhost",
+  hostname: "db",
   pool_size: 10
 
 config :ex_debug_toolbar,
