@@ -8,11 +8,19 @@ RUN apt-get update \
  && apt-get install -y inotify-tools
 
 RUN groupadd dev && useradd -ms /usr/bin/zsh -g dev dev
-USER dev
 
+USER dev
 RUN mix local.hex --force \
  && mix archive.install --force  https://github.com/phoenixframework/archives/raw/master/phx_new-1.3.2.ez \
  && mix local.rebar --force
+
+USER root
+COPY . /app
+RUN chown dev:dev /app -R
+
+USER dev
+RUN cd /app \
+ && MIX_ENV=prod mix compile
 
 EXPOSE 4000
 WORKDIR /app
