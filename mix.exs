@@ -7,7 +7,7 @@ defmodule PhoenixDemo.Mixfile do
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers,
+      compilers: [:talon, :phoenix, :gettext] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
       aliases: aliases(),
       deps: deps()
@@ -20,7 +20,7 @@ defmodule PhoenixDemo.Mixfile do
   def application do
     [
       mod: {PhoenixDemo.Application, []},
-      extra_applications: [:ex_debug_toolbar, :logger, :runtime_tools]
+      extra_applications: [:ex_debug_toolbar, :logger, :runtime_tools, :faker_elixir_octopus, :talon]
     ]
   end
 
@@ -41,6 +41,8 @@ defmodule PhoenixDemo.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:ex_debug_toolbar, "~> 0.3.0"},
+      {:talon, path: "../github/talon"},
+      {:faker_elixir_octopus, "~> 0.12.0", only: [:dev, :test]},
       {:cowboy, "~> 1.0"}
     ]
   end
