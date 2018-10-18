@@ -1,0 +1,24 @@
+= form_for @changeset, @action, [class: "form-horizontal"], fn f ->
+  .box-body
+    - a = {f, @talon}
+    
+      .form-group
+        = label f, :content, class: "col-sm-2 control-label"
+        .col-sm-10
+          = Talon.Form.input_builder a, :content, class: "form-control", place_holder: "content"
+          = error_tag f, :content
+    
+      .form-group
+        = label f, :username, class: "col-sm-2 control-label"
+        .col-sm-10
+          = Talon.Form.input_builder a, :username, class: "form-control", place_holder: "username"
+          = error_tag f, :username
+    
+      .form-group
+        = label f, :post_id, class: "col-sm-2 control-label"
+        .col-sm-10
+          = Talon.Form.input_builder a, :post_id, class: "form-control", place_holder: "post_id"
+          = error_tag f, :post_id
+    
+    .box-footer
+      = submit dgettext("talon", "Submit"), class: "btn btn-primary"

@@ -10,6 +10,8 @@ config :phoenix_demo, :talon,
 
 config :phoenix_demo, PhoenixDemo.Admin,
   resources: [
+    PhoenixDemo.Admin.Blog.Comment,
+    PhoenixDemo.Admin.Blog.Post,
   ],
   pages: [
   ],
