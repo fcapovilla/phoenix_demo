@@ -1,5 +1,6 @@
 defmodule PhoenixDemoWeb.Router do
   use PhoenixDemoWeb, :router
+  use Talon.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -19,6 +20,12 @@ defmodule PhoenixDemoWeb.Router do
     get "/", PageController, :index
     resources "/posts", PostController
     resources "/comments", CommentController
+  end
+
+  # your app's routes
+  scope "/admin", PhoenixDemoWeb do
+    pipe_through :browser
+    talon_routes(PhoenixDemo.Admin)
   end
 
   # Other scopes may use custom stacks.

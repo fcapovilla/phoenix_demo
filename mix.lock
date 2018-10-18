@@ -28,4 +28,4 @@
   "scrivener": {:hex, :scrivener, "2.5.0", "e1f78c62b6806d91cc9c4778deef1ea4e80aa9fadfce2c16831afe0468cc8a2c", [:mix], [], "hexpm"},
   "scrivener_ecto": {:hex, :scrivener_ecto, "1.3.0", "69698428e22810ac8a47abc12d1df5b2f5d8f6b36dc5d5bfe6dd93fde857c576", [:mix], [{:ecto, "~> 2.0", [hex: :ecto, repo: "hexpm", optional: false]}, {:postgrex, "~> 0.11.0 or ~> 0.12.0 or ~> 0.13.0", [hex: :postgrex, repo: "hexpm", optional: true]}, {:scrivener, "~> 2.4", [hex: :scrivener, repo: "hexpm", optional: false]}], "hexpm"},
   "slime": {:hex, :slime, "1.2.0", "d46ede53c96b743dfdd23821268dc9b01f04ffea65d9d57c4e3d9200b162df02", [:mix], [{:neotoma, "~> 1.7", [hex: :neotoma, repo: "hexpm", optional: false]}], "hexpm"},
-  "talon": {:git, "https://github.com/talonframework/talon.git", "d164c065ac74c156c3abeca8437e184456db903c", []}}
+  "talon": {:git, "https://github.com/fcapovilla/talon.git", "d164c065ac74c156c3abeca8437e184456db903c", []}}

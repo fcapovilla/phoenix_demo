@@ -41,7 +41,7 @@ defmodule PhoenixDemo.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:ex_debug_toolbar, "~> 0.3.0"},
-      {:talon, path: "../github/talon"},
+      {:talon, github: "fcapovilla/talon"},
       {:faker_elixir_octopus, "~> 0.12.0", only: [:dev, :test]},
       {:cowboy, "~> 1.0"}
     ]
